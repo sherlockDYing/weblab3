@@ -12,7 +12,31 @@ CREATE TABLE IF NOT EXISTS user (
   PRIMARY KEY (UserID)
 );
 
-INSERT INTO user (userID, username, password, email, phone) VALUES
-  (1, 'kaiyudai', '12345678', 'kydai@fudan.edu.cn', '13666666666'),
-  (2, 'fanliu', '12345678', 'liufan@fudan.edu.cn', '13888888888'),
-  (3, 'xingyuzhang', '12345678', NULL, NULL);
+INSERT INTO comment (posttime,statuename,username,introduction) VALUES
+  ('123333', 'kaiyudai', 'qqqq', 'kydai@fudan.edu.cn'),
+  ('fanliu', '12345678', 'qqqq', '13888888888'),
+  ('xingyuzhang', '12345678', 'qqqq', 'aaa');
+
+  INSERT INTO user (username, password,gender ,role,location,introduction,workplace) VALUES
+  ('qqq')
+
+CREATE TABLE IF NOT EXISTS user (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL,
+  gender VARCHAR (4) ,
+  role INT DEFAULT NULL,
+  location VARCHAR (100) ,
+  introduction VARCHAR (400),
+  workplace VARCHAR (100),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS comment (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  posttime VARCHAR (255) NOT NULL ,
+  statuename VARCHAR (255) NOT  NULL ,
+  username VARCHAR (255) NOT NULL,
+  introduction VARCHAR (500),
+  PRIMARY KEY (id)
+);
